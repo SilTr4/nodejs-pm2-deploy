@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const {
-  DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH, KEY_PATH, DEPLOY_REF = 'origin/master',
+  DEPLOY_USER, FILE, DEPLOY_HOST, DEPLOY_PATH, KEY_PATH, DEPLOY_REF = 'origin/master',
 } = process.env;
 
 module.exports = {
@@ -19,7 +19,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: 'https://github.com/SilTr4/nodejs-pm2-deploy.git',
       path: DEPLOY_PATH,
-      'pre-deploy': `scp ./*.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH} -i ./vm-3`,
+      'pre-deploy': `scp ${FILE} ./*.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
       'post-deploy': 'npm i && npm run build',
     },
   },
