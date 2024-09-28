@@ -19,7 +19,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: 'https://github.com/SilTr4/nodejs-pm2-deploy.git',
       path: DEPLOY_PATH,
-      'pre-deploy': `scp ${FILE} ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
+      // 'pre-deploy': `scp ${FILE} ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
       'post-deploy': 'npm i && npm run build',
     },
   },
