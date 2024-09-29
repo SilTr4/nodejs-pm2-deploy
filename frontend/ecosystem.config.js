@@ -20,7 +20,7 @@ module.exports = {
       repo: 'https://github.com/SilTr4/nodejs-pm2-deploy.git',
       path: DEPLOY_PATH,
       'pre-deploy-local': `scp ${FILE} ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/current/frontend`,
-      'post-deploy': 'cd frontend && npm i && npm run build',
+      'post-deploy': 'cd frontend && npm run build',
     },
   },
 };
